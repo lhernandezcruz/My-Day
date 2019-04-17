@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="headerfiles">
+	<meta charset="UTF-8" />
+</head>
+
+<body>
+	<nav th:fragment="header-anon" class="navbar navbar-dark bg-dark">
+			<a class="navbar-brand mb-0 h1" href="/">My Day</a>
+		<a class="btn btn-outline-warning" href="/login">Log-in</a>
+	</nav>
+	<nav th:fragment="header-auth" class="navbar  navbar-expand-lg  navbar-dark bg-dark">
+			<a class="navbar-brand mb-0 h1" href="/">Home</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarToggler">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" href="/userinfo">My Info</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/new/rating">New Rating</a>
+						</li>
+					</ul>
+					<form th:action="@{/logout}" method="post" class="form-inline">
+						<input class="btn btn-outline-warning" type="submit" value="Log-out"></input>
+					</form>
+				</div>
+
+	</nav>
+</body>
+
+</html>

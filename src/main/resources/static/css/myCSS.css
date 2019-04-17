@@ -1,0 +1,10 @@
+.box {
+  display: flex; /* or inline-flex */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-box {
+  padding-top: 25px;
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <header th:replace="fragments/general :: ${#authorization.expression('isAnonymous()')} ? 'header-anon' : 'header-auth'"></header>
+	<h1>Result</h1>
+    <p th:text="'rating: ' + ${newRating.rating}" />
+    <p th:text="'content: ' + ${newRating.day}" />
+    <a href="/rating">Submit another message</a>
+</body>
+</html>
