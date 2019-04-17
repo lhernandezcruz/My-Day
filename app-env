@@ -1,5 +1,0 @@
-export GOOGLE_CLIENT_ID=""
-export GOOGLE_CLIENT_SECRET=""
-export MYSQL_USERNAME=""
-export MYSQL_PASSWORD=""
-export MYSQL_URL=""
