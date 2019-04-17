@@ -23,4 +23,4 @@ This application allows a user to log their day with a rating and a short messag
 * Clone the project
 * Enter SQL and Google API credentials in `app/src/main/resources/appliction.yml`. This will allow the application to store ratings and allow users to long in.
 * While in the `app` folder run the command `mvn clean install` followed by `mvn spring-boot:run`. This will run the application.
-* To access the website use `localhost:8000` (sometimes the port may be different).
+* To access the website use `localhost:8080` (sometimes the port may be different).
