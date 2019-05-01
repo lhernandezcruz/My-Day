@@ -57,10 +57,8 @@ public class RatingsController {
     User user = fetchUser((String) details.get("sub"));
     ArrayList<ViewedRating> ratings = convertToViewedRating(user.getRatings());
     
-    // System.out.println( user.getRatings());
     model.addAttribute("ratings", ratings);
-    // fix later: redirect to page where user can view all ratings
-    return "viewAll";
+    return "all";
   }
 
   /**
@@ -102,7 +100,7 @@ public class RatingsController {
    * @return
    */
   @PostMapping("/new/rating")
-  public String addRating(@ModelAttribute("newRating") ViewedRating submittedRating, OAuth2Authentication oauth) {
+  public String addRating(Model model, @ModelAttribute("newRating") ViewedRating submittedRating, OAuth2Authentication oauth) {
     Authentication auth = oauth.getUserAuthentication();
     ObjectMapper m = new ObjectMapper();
 
@@ -114,10 +112,12 @@ public class RatingsController {
     
     ratingsRepository.save(rating);
 
-    // fix later: redirect to page where user can view all ratings
-    return "result";
+    ArrayList<ViewedRating> ratings = convertToViewedRating(user.getRatings());
+    
+    model.addAttribute("ratings", ratings);
+    // TODO: fix later: redirect to page where user can view all ratings
+    return "all";
   }
-
 
   /**
    * Class that handles comparing two ratings

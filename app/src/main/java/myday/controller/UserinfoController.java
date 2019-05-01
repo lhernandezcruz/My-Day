@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserinfoController {
 
-	@RequestMapping("/userinfo") 
+	@RequestMapping("/profile") 
 	public String welcome(Map<String, Object> model, OAuth2Authentication oauth) {
 		if (oauth != null ) {
 			ObjectMapper m = new ObjectMapper();
@@ -27,7 +27,7 @@ public class UserinfoController {
 			model.put("name", details.get("name"));
 			model.put("picture_url", details.get("picture"));
 		}
-		return "userinfo";
+		return "profile";
 	}
 
 }

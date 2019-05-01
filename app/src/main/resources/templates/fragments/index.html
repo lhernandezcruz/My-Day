@@ -37,7 +37,7 @@
 											<div class="feature-item">
 												<i class="icon-screen-smartphone text-primary"></i>
 												<h3>Web Accessibility </h3>
-												<p class="text-muted">Access from any device with now downloads!</p>
+												<p class="text-muted">Access from any web enabled device!</p>
 											</div>
 										</div>
 										<div class="col-lg-6">
@@ -80,10 +80,26 @@
 			<div class="overlay"></div>
 		</section>
 
-	<footer th:fragement="footer">
+
+		<div  th:fragment="side-bar-index"  class="col-sm-3 col-md-1 min-vh-100 pt-3 bg-darker">
+				<ul class="nav flex-column h-100">
+					 <li class="nav-item">
+						 <a class="nav-link active" href="/"> <i class="fas fa-home"></i> Today</a>
+					 </li>
+					 <li class="nav-item">
+							 <a class="nav-link disabled" href="/"><i class="fas fa-calendar-day"></i> All</a>
+					 </li>
+					 <li class="nav-item">
+							 <a class="nav-link disabled" href="/"><i class="fas fa-calendar-alt"></i> Profile</a>
+					 </li>
+				</ul>
+		</div>
+		
+
+	<footer th:fragement="footer" class="footer">
 			<div class="container">
 				<p>&copy; My Day 2019. All Rights Reserved.</p>
-				<ul class="list-inline">
+				<ul class="list-inline"></ul>
 					<li class="list-inline-item">
 						<a href="#">Privacy</a>
 					</li>

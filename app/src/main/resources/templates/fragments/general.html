@@ -18,12 +18,6 @@
 
 				<div class="collapse navbar-collapse" id="navbarToggler">
 					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-						<li class="nav-item">
-							<a class="nav-link" href="/userinfo">My Info</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="/new/rating">New Rating</a>
-						</li>
 					</ul>
 					<form th:action="@{/logout}" method="post" class="form-inline">
 						<input class="btn btn-outline-warning" type="submit" value="Log-out"></input>
@@ -31,7 +25,75 @@
 				</div>
 	</nav>
 
-	<footer th:fragement="footer">
+	<div  th:fragment="side-bar-index"  class="col-sm-3 col-md-1 min-vh-100 pt-3 bg-darker">
+			<ul class="nav flex-column h-100">
+				 <li class="nav-item">
+					 <a class="nav-link active" href="/"> <i class="fas fa-calendar-day"></i> Today</a>
+				 </li>
+				 <li class="nav-item">
+						 <a class="nav-link disabled" href="/view/all"><i class="fas fa-calendar-alt"></i> All</a>
+				 </li>
+				 <li class="nav-item">
+						<a class="nav-link disabled" href="/new/rating"><i class="fas fa-plus"></i> New</a>
+				</li>
+				<li class="nav-item">
+						<a class="nav-link disabled" href="/profile"><i class="fas fa-user"></i> Profile</a>
+				</li>
+			</ul>
+	</div>
+
+	<div th:fragment="side-bar-all"  class="col-sm-3 col-md-1 min-vh-100 pt-3 bg-darker">
+			<ul class="nav flex-column h-100">
+				 <li class="nav-item">
+					 <a class="nav-link disabled" href="/"> <i class="fas fa-calendar-day"></i> Today</a>
+				 </li>
+				 <li class="nav-item">
+						 <a class="nav-link active" href="/view/all"><i class="fas fa-calendar-alt"></i> All</a>
+				 </li>
+				 <li class="nav-item">
+						<a class="nav-link disabled" href="/new/rating"><i class="fas fa-plus"></i> New</a>
+				</li>
+				<li class="nav-item">
+						<a class="nav-link disabled" href="/profile"><i class="fas fa-user"></i> Profile</a>
+				</li>
+			</ul>
+	</div>
+
+	<div th:fragment="side-bar-profile"  class="col-sm-3 col-md-1 min-vh-100 pt-3 bg-darker">
+			<ul class="nav flex-column h-100">
+				 <li class="nav-item">
+					 <a class="nav-link disabled" href="/"> <i class="fas fa-calendar-day"></i> Today</a>
+				 </li>
+				 <li class="nav-item">
+						 <a class="nav-link disabled" href="/view/all"><i class="fas fa-calendar-alt"></i> All</a>
+				 </li>
+				 <li class="nav-item">
+						<a class="nav-link disabled" href="/new/rating"><i class="fas fa-plus"></i> New</a>
+				</li>
+				<li class="nav-item">
+						<a class="nav-link active" href="/profile"><i class="fas fa-user"></i> Profile</a>
+				</li>
+			</ul>
+	</div>
+
+	<div th:fragment="side-bar-new-rating"  class="col-sm-3 col-md-1 min-vh-100 pt-3 bg-darker">
+			<ul class="nav flex-column h-100">
+				 <li class="nav-item">
+					 <a class="nav-link disabled" href="/"> <i class="fas fa-calendar-day"></i> Today</a>
+				 </li>
+				 <li class="nav-item">
+						 <a class="nav-link disabled" href="/view/all"><i class="fas fa-calendar-alt"></i> All</a>
+				 </li>
+				 <li class="nav-item">
+						<a class="nav-link active" href="/new/rating"><i class="fas fa-plus"></i> New</a>
+				</li>
+				 <li class="nav-item">
+						 <a class="nav-link disabled" href="/profile"><i class="fas fa-user"></i> Profile</a>
+				 </li>
+			</ul>
+	</div>
+
+	<footer th:fragement="footer" class="footer">
 			<div class="container">
 				<p>&copy; My Day 2019. All Rights Reserved.</p>
 				<ul class="list-inline">

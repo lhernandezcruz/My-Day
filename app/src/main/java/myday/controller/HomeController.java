@@ -27,6 +27,7 @@ public class HomeController {
   public Principal user(Principal principal) {
     return principal;
 	}
+	
 	@RequestMapping("/") 
 	public String welcome(Map<String, Object> model, OAuth2Authentication oauth) {
 		if (oauth != null ) {
